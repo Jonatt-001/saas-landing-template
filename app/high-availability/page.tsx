@@ -154,7 +154,7 @@ export default function HighAvailabilityPage() {
               </div>
 
               <p className="text-muted-foreground text-sm max-w-xl">
-                Performance insights powered by Kaali • Space's intelligence layer
+                Performance insights powered by Kaali • Space&apos;s intelligence layer
                 help teams maintain system reliability at scale.
               </p>
 
