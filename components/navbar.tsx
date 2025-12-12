@@ -81,10 +81,8 @@ export default function NavBar() {
                 </Button>
               </DropdownMenuTrigger>
 
-              {/* FULL UPDATED DROPDOWN CONTENT — NO REMOVALS */}
               <DropdownMenuContent className="w-80">
 
-                {/* AI COPILOT COMMAND CENTER */}
                 <DropdownMenuItem asChild>
                   <Link href="/copilot" className="flex items-start">
                     <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
@@ -97,7 +95,6 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* AI COPILOTS */}
                 <DropdownMenuItem asChild>
                   <Link href="/copilot" className="flex items-start">
                     <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
@@ -111,7 +108,6 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* DATA INTELLIGENCE */}
                 <DropdownMenuItem asChild>
                   <Link href="/data-intelligence" className="flex items-start">
                     <PersonIcon className="mr-2 h-4 w-4" />
@@ -125,7 +121,6 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* SUPPORT AUTOMATION */}
                 <DropdownMenuItem asChild>
                   <Link href="/support-automation" className="flex items-start">
                     <GlobeIcon className="mr-2 h-4 w-4" />
@@ -138,7 +133,6 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* HIGH AVAILABILITY */}
                 <DropdownMenuItem asChild>
                   <Link href="/high-availability" className="flex items-start">
                     <TimerIcon className="mr-2 h-4 w-4" />
@@ -151,7 +145,6 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* DEDICATED SUPPORT */}
                 <DropdownMenuItem asChild>
                   <Link href="/dedicated-support" className="flex items-start">
                     <FaceIcon className="mr-2 h-4 w-4" />
@@ -228,6 +221,66 @@ export default function NavBar() {
                     </Link>
                   </motion.div>
                 ))}
+
+                {/* MOBILE SOLUTIONS SECTION */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                  className="pt-2 mt-2 border-t border-muted"
+                >
+                  <div className="px-3 pb-2 text-sm font-semibold text-muted-foreground">
+                    Solutions
+                  </div>
+
+                  <Link
+                    href="/copilot"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    AI Copilot Command Center
+                  </Link>
+
+                  <Link
+                    href="/copilot"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    AI Copilots
+                  </Link>
+
+                  <Link
+                    href="/data-intelligence"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Data Intelligence
+                  </Link>
+
+                  <Link
+                    href="/support-automation"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Support Automation
+                  </Link>
+
+                  <Link
+                    href="/high-availability"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    High Availability
+                  </Link>
+
+                  <Link
+                    href="/dedicated-support"
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Dedicated Support
+                  </Link>
+                </motion.div>
 
                 {/* CONNECT MOBILE */}
                 <motion.div
