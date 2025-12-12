@@ -10,54 +10,52 @@ import { motion } from "framer-motion";
 export default function Faq() {
   const accordionItems = [
     {
-      title: "This template is Free?",
+      title: "What is Kaali • Space?",
       content: (
         <div className="text-muted-foreground">
-          Yes, this template is free. You can use it for personal or commercial
-          purposes.
+          Kaali • Space is an intelligent automation platform delivering AI
+          copilots, workflow orchestration, real-time data intelligence, and
+          enterprise-class tools designed to help teams operate faster and more
+          efficiently.
         </div>
       ),
     },
     {
-      title: "There are more templates?",
+      title: "Is Kaali • Space suitable for my business size?",
       content: (
         <div className="text-muted-foreground">
-          Yes, there are more templates available. You can find them here:{" "}
-          <a
-            href="https://x.com/gonzalochale"
-            target="_blank"
-            rel="noreferrer"
-            className="text-primary underline"
-          >
-            gonzalochale.dev
-          </a>
+          Yes. Whether you’re a startup automating your first process or an
+          enterprise orchestrating thousands of tasks per minute, Kaali • Space
+          scales seamlessly with your operational needs.
         </div>
       ),
     },
     {
-      title: "How can I use this template?",
+      title: "Do I need technical experience to use Kaali • Space?",
       content: (
         <div className="text-muted-foreground">
-          You can use this template by cloning it from{" "}
-          <a
-            href="https://github.com/gonzalochale/nextui-saas-landing-template"
-            className="text-primary underline"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          .
+          No. Our AI copilots and guided workflows handle the heavy lifting.
+          Developers can integrate deeply using APIs, while non-technical teams
+          benefit from intuitive dashboards and automation modules.
         </div>
       ),
     },
     {
-      title: "How can I contribute to this template?",
+      title: "Is my data secure?",
       content: (
         <div className="text-muted-foreground">
-          You can contribute to this template by forking it on GitHub and
-          submitting a pull request. You can also report any issues or bugs you
-          encounter while using the template.
+          Yes. Kaali • Space uses enterprise-grade encryption, secure isolated
+          environments, and continuous compliance standards to ensure full data
+          protection across all workflows.
+        </div>
+      ),
+    },
+    {
+      title: "Can Kaali • Space integrate with our existing tools?",
+      content: (
+        <div className="text-muted-foreground">
+          Absolutely. We support API-first integrations, webhooks, and modular AI
+          pipelines that connect seamlessly with your current infrastructure.
         </div>
       ),
     },
