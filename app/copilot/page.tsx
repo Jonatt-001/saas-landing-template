@@ -279,7 +279,7 @@ export default function CopilotPage() {
                       className="w-full p-4 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground resize-y"
                     />
 
-                    <div className="mt-3 flex items-center justify-between">
+                    <div className="mt-3 flex items-center justify-between flex-wrap gap-2">
                       {/* Persona selector */}
                       <div className="flex items-center gap-2">
                         <label className="text-sm text-muted-foreground mr-2">
@@ -379,7 +379,7 @@ export default function CopilotPage() {
                 </div>
               </CardContent>
 
-              <CardFooter className="p-4 flex justify-between">
+              <CardFooter className="p-4 flex justify-between flex-wrap gap-2">
                 <div className="text-sm text-muted-foreground">
                   Running: {running ? "Yes" : "No"}
                 </div>
@@ -402,8 +402,8 @@ export default function CopilotPage() {
           </section>
 
           {/* Right panel: Execution History */}
-          <aside className="md:col-span-1 w-full max-w-full overflow-x-hidden"> {/* MOBILE FIX 3 */}
-            <div className="sticky top-24 md:static"> {/* MOBILE FIX 3 */}
+          <aside className="md:col-span-1 w-full max-w-full"> {/* MOBILE FIX 3 - full width on mobile */}
+            <div className="md:sticky md:top-24 md:overflow-visible"> {/* avoid fixed sticky on tiny screens */}
               <Card className="bg-card">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between mb-3">
