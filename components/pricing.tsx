@@ -63,7 +63,7 @@ export default function Pricing() {
           Choose the Right Kaali • Space Plan
         </h2>
         <p className="mx-auto max-w-xl text-muted-foreground text-center">
-          Whether you're launching or scaling, Kaali • Space offers flexible
+          Whether you&apos;re launching or scaling, Kaali • Space offers flexible
           automation and intelligence plans for every stage.
         </p>
       </motion.div>
