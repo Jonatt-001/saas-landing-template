@@ -35,11 +35,6 @@ import Link from "next/link";
 
 /**
  * AI Copilot Command Center
- * - Uses your design tokens (bg-card, text-muted-foreground, bg-linear-to-b etc.)
- * - Uses Framer Motion for polished entrance and micro-interactions
- * - Uses UI primitives already present in your project (Button, Card, Dialog, Tooltip)
- *
- * Drop this in: /app/copilot/page.tsx
  */
 
 type CommandEntry = {
@@ -54,6 +49,7 @@ type CommandEntry = {
 export default function CopilotPage() {
   const [input, setInput] = useState("");
   const [persona, setPersona] = useState("General Copilot");
+
   const [history, setHistory] = useState<CommandEntry[]>(() => {
     return [
       {
@@ -81,6 +77,7 @@ export default function CopilotPage() {
 
   const [running, setRunning] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
@@ -89,6 +86,7 @@ export default function CopilotPage() {
 
   function runCommand() {
     if (!input.trim()) return;
+
     const entry: CommandEntry = {
       id: cryptoRandomId(),
       input: input.trim(),
@@ -97,6 +95,7 @@ export default function CopilotPage() {
       time: new Date().toLocaleTimeString(),
       persona,
     };
+
     setHistory((s) => [entry, ...s]);
     setInput("");
     setSelectedId(entry.id);
@@ -106,6 +105,7 @@ export default function CopilotPage() {
 
     setTimeout(() => {
       const ok = Math.random() > 0.06;
+
       setHistory((h) =>
         h.map((item) =>
           item.id === entry.id
@@ -119,12 +119,14 @@ export default function CopilotPage() {
             : item
         )
       );
+
       setRunning(false);
     }, processTime);
   }
 
   function stopRunning() {
     if (!selectedId) return;
+
     setHistory((h) =>
       h.map((item) =>
         item.id === selectedId
@@ -136,6 +138,7 @@ export default function CopilotPage() {
           : item
       )
     );
+
     setRunning(false);
     setSelectedId(null);
   }
@@ -169,43 +172,35 @@ export default function CopilotPage() {
             </h1>
             <p className="text-muted-foreground mt-2 max-w-xl">
               Run commands, preview responses, and simulate automation workflows.
-              Built for teams that need fast, auditable AI operations.
+              Designed for fast, auditable AI ops.
             </p>
           </div>
 
+          {/* Controls */}
           <div className="flex items-center gap-3">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-2"
-                  >
+                  <Button variant="outline" size="sm" className="flex items-center gap-2">
                     <Sparkle className="h-4 w-4" />
                     Simulate
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent>
-                  Run in simulation mode (safe, no external calls)
-                </TooltipContent>
+                <TooltipContent>Run in simulation mode</TooltipContent>
               </Tooltip>
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex items-center gap-2"
-                  >
+                  <Button variant="ghost" size="sm" className="flex items-center gap-2">
                     <GearIcon /> Settings
                   </Button>
                 </DialogTrigger>
+
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Copilot Settings</DialogTitle>
                     <DialogDescription>
-                      Configure default persona, verbosity, and logging.
+                      Configure persona, verbosity, logging.
                     </DialogDescription>
                   </DialogHeader>
 
@@ -214,26 +209,18 @@ export default function CopilotPage() {
                       <div>
                         <div className="font-medium">Default Persona</div>
                         <div className="text-sm text-muted-foreground">
-                          Choose which copilot to use by default
+                          Choose startup copilot behaviour
                         </div>
                       </div>
+
                       <div className="flex gap-2">
-                        <Button
-                          size="sm"
-                          onClick={() => selectPersona("General Copilot")}
-                        >
+                        <Button size="sm" onClick={() => selectPersona("General Copilot")}>
                           General
                         </Button>
-                        <Button
-                          size="sm"
-                          onClick={() => selectPersona("Support Copilot")}
-                        >
+                        <Button size="sm" onClick={() => selectPersona("Support Copilot")}>
                           Support
                         </Button>
-                        <Button
-                          size="sm"
-                          onClick={() => selectPersona("Insights Copilot")}
-                        >
+                        <Button size="sm" onClick={() => selectPersona("Insights Copilot")}>
                           Insights
                         </Button>
                       </div>
@@ -242,8 +229,7 @@ export default function CopilotPage() {
                     <Separator />
 
                     <div className="text-sm text-muted-foreground">
-                      Logging is stored locally in the demo. When you connect a
-                      backend, logs will sync to your automation pipeline.
+                      Logs are kept locally; backend sync optional.
                     </div>
                   </div>
 
@@ -261,9 +247,7 @@ export default function CopilotPage() {
               size="sm"
               onClick={() => {
                 const template =
-                  input.trim() ||
-                  (history[0] && history[0].input) ||
-                  "Sample command";
+                  input.trim() || history[0]?.input || "Sample command";
                 alert(`Saved template: ${truncate(template, 80)}`);
               }}
             >
@@ -274,29 +258,27 @@ export default function CopilotPage() {
 
         {/* Workspace */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Input */}
+          {/* Input panel */}
           <section className="md:col-span-2">
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium mb-2">
-                      Command
-                    </label>
+                    <label className="block text-sm font-medium mb-2">Command</label>
+
                     <textarea
                       ref={inputRef}
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       rows={5}
-                      placeholder="Ask the copilot to summarize, rewrite, triage, or generate an automation snippet..."
+                      placeholder="Ask the copilot to summarize, rewrite, triage, or generate automation..."
                       className="w-full p-4 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground resize-y"
                     />
 
                     <div className="mt-3 flex items-center justify-between">
+                      {/* Persona selector */}
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-muted-foreground mr-2">
-                          Persona:
-                        </label>
+                        <label className="text-sm text-muted-foreground mr-2">Persona:</label>
 
                         <select
                           value={persona}
@@ -310,16 +292,17 @@ export default function CopilotPage() {
                         </select>
                       </div>
 
+                      {/* Controls */}
                       <div className="flex items-center gap-2">
                         <Button
                           variant="outline"
+                          size="sm"
                           onClick={() => {
                             setInput(
-                              "Draft a concise privacy-friendly message to explain data usage to customers."
+                              "Draft a concise privacy-friendly explanation of data usage for customers."
                             );
                             inputRef.current?.focus();
                           }}
-                          size="sm"
                         >
                           Example
                         </Button>
@@ -328,8 +311,8 @@ export default function CopilotPage() {
                           variant="default"
                           size="sm"
                           onClick={runCommand}
-                          className="flex items-center gap-2"
                           disabled={running && selectedId !== null}
+                          className="flex items-center gap-2"
                         >
                           <PlayIcon />
                           Run
@@ -338,8 +321,8 @@ export default function CopilotPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={stopRunning}
                           disabled={!running}
+                          onClick={stopRunning}
                         >
                           <StopIcon />
                         </Button>
@@ -350,7 +333,7 @@ export default function CopilotPage() {
 
                 <Separator className="my-6" />
 
-                {/* Simulation panes */}
+                {/* Live simulation preview */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <motion.div
                     initial={{ scale: 0.98, opacity: 0.9 }}
@@ -360,9 +343,7 @@ export default function CopilotPage() {
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div className="text-sm font-medium">Simulation Preview</div>
-                      <div className="text-xs text-muted-foreground">
-                        Mocked local run
-                      </div>
+                      <div className="text-xs text-muted-foreground">Mocked local run</div>
                     </div>
 
                     <pre className="text-sm bg-transparent whitespace-pre-wrap max-h-36 overflow-auto text-muted-foreground">{`> persona: ${persona}
@@ -377,9 +358,7 @@ export default function CopilotPage() {
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div className="text-sm font-medium">Integrations</div>
-                      <div className="text-xs text-muted-foreground">
-                        Simulated
-                      </div>
+                      <div className="text-xs text-muted-foreground">Simulated</div>
                     </div>
 
                     <ul className="text-sm space-y-2 text-muted-foreground">
@@ -401,9 +380,7 @@ export default function CopilotPage() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => {
-                      if (history[0]) copyOutput(history[0].output);
-                    }}
+                    onClick={() => history[0] && copyOutput(history[0].output)}
                   >
                     <CopyIcon /> Copy Last
                   </Button>
@@ -416,7 +393,7 @@ export default function CopilotPage() {
             </Card>
           </section>
 
-          {/* Right panel */}
+          {/* Right panel: Execution History */}
           <aside className="md:col-span-1">
             <div className="sticky top-24">
               <Card className="bg-card">
@@ -431,7 +408,7 @@ export default function CopilotPage() {
                   <div className="space-y-3">
                     {history.length === 0 && (
                       <div className="text-sm text-muted-foreground">
-                        No executions yet. Run a command to get started.
+                        No executions yet. Run a command to begin.
                       </div>
                     )}
 
@@ -473,7 +450,6 @@ export default function CopilotPage() {
                         {selectedId === item.id && (
                           <>
                             <Separator className="my-3" />
-
                             <pre className="text-sm text-muted-foreground whitespace-pre-wrap max-h-44 overflow-auto">
                               {item.output}
                             </pre>
@@ -516,12 +492,9 @@ export default function CopilotPage() {
                     <div className="text-sm text-muted-foreground">
                       Audit logs are local in demo
                     </div>
-
                     <Button
                       size="sm"
-                      onClick={() => {
-                        alert("Download logs (mock)");
-                      }}
+                      onClick={() => alert("Download logs (mock)")}
                     >
                       <CopyIcon /> Export
                     </Button>
@@ -536,7 +509,7 @@ export default function CopilotPage() {
           </aside>
         </div>
 
-        {/* Footer CTA */}
+        {/* Footer */}
         <motion.div
           initial={{ y: 6, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -552,13 +525,7 @@ export default function CopilotPage() {
               <Link href="/">Return Home</Link>
             </Button>
 
-            <Button
-              size="sm"
-              variant="default"
-              onClick={() => {
-                alert("Deploy workflow (mock)");
-              }}
-            >
+            <Button size="sm" variant="default" onClick={() => alert("Deploy workflow (mock)")}>
               <PlayIcon /> Deploy
             </Button>
           </div>
@@ -568,42 +535,38 @@ export default function CopilotPage() {
   );
 }
 
-/* ----------------------
-   Helper components & utils
----------------------- */
+/* ------------------------------
+   Helpers
+------------------------------ */
 
-function cryptoRandomId() {
-  try {
-    return (
-      (crypto as any).randomUUID?.() ??
-      Math.random().toString(36).slice(2, 9)
-    );
-  } catch {
-    return Math.random().toString(36).slice(2, 9);
+function cryptoRandomId(): string {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
   }
+
+  return Math.random().toString(36).slice(2, 10);
 }
 
-function truncate(text: string, n = 80) {
+function truncate(text: string, n = 80): string {
   if (!text) return "";
   return text.length > n ? text.slice(0, n - 1) + "…" : text;
 }
 
-function generateMockOutput(input: string, persona = "General Copilot") {
+function generateMockOutput(input: string, persona = "General Copilot"): string {
   if (persona.includes("Support")) {
-    return `Friendly support reply:\n\nThanks for reaching out. I looked into this and recommend checking the billing account details. If you'd like, I can escalate this to a specialist with priority. (Mocked)`;
+    return `Friendly support reply:\n\nThanks for reaching out. I looked into this and recommend checking the billing account details. If you'd like, I can escalate this to a specialist. (Mocked)`;
   }
 
   if (persona.includes("Insights")) {
-    return `Quick insights:\n- Conversion dropped 3% week-over-week\n- High dropoff at onboarding step 2\n- Recommended: A/B test onboarding CTA, enable progressive profiling\n(Mocked analytic summary)`;
+    return `Quick insights:\n- Conversion dropped 3% WoW\n- High dropoff at onboarding step 2\n- Recommended: A/B test onboarding CTA\n(Mocked analytic summary)`;
   }
 
   if (persona.includes("DevOps")) {
-    return `Deployment quick-check:\n- Latest build passed lint and tests\n- No incidents in last 24h\n- Recommend scaling DB pool in heavy hours\n(Mocked ops summary)`;
+    return `Deployment quick-check:\n- Build passed\n- No incidents\n- Scale DB pool in heavy hours\n(Mocked ops summary)`;
   }
 
   const short = input.length > 240 ? input.slice(0, 220) + "…" : input;
-
-  return `Response (${persona}):\n\n${short}\n\n— This is a mocked response for demo purposes.`;
+  return `Response (${persona}):\n\n${short}\n\n— Mocked response.`;
 }
 
 function StatusBadge({
@@ -614,8 +577,7 @@ function StatusBadge({
   const map = {
     queued: {
       label: "queued",
-      color:
-        "bg-yellow-600/10 text-yellow-400 border-yellow-600/20",
+      color: "bg-yellow-600/10 text-yellow-400 border-yellow-600/20",
     },
     running: {
       label: "running",
@@ -623,8 +585,7 @@ function StatusBadge({
     },
     done: {
       label: "done",
-      color:
-        "bg-green-600/10 text-green-400 border-green-600/20",
+      color: "bg-green-600/10 text-green-400 border-green-600/20",
     },
     failed: {
       label: "failed",
