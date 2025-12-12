@@ -156,13 +156,15 @@ export default function CopilotPage() {
   }
 
   return (
-    <main className="w-full max-w-7xl mx-auto px-4 py-12 md:px-6">
+    <main
+      className="w-full max-w-7xl mx-auto px-4 py-12 md:px-6 overflow-x-hidden" // MOBILE FIX 1
+    >
       <motion.div
         initial={{ y: 18, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col gap-8"
+        className="flex flex-col gap-8 max-w-full overflow-x-hidden" // MOBILE FIX 2
       >
         {/* Header */}
         <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -257,14 +259,16 @@ export default function CopilotPage() {
         </header>
 
         {/* Workspace */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-full overflow-x-hidden"> {/* MOBILE FIX 2 */}
           {/* Input panel */}
           <section className="md:col-span-2">
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-1">
-                    <label className="block text-sm font-medium mb-2">Command</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Command
+                    </label>
 
                     <textarea
                       ref={inputRef}
@@ -278,7 +282,9 @@ export default function CopilotPage() {
                     <div className="mt-3 flex items-center justify-between">
                       {/* Persona selector */}
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-muted-foreground mr-2">Persona:</label>
+                        <label className="text-sm text-muted-foreground mr-2">
+                          Persona:
+                        </label>
 
                         <select
                           value={persona}
@@ -343,7 +349,9 @@ export default function CopilotPage() {
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div className="text-sm font-medium">Simulation Preview</div>
-                      <div className="text-xs text-muted-foreground">Mocked local run</div>
+                      <div className="text-xs text-muted-foreground">
+                        Mocked local run
+                      </div>
                     </div>
 
                     <pre className="text-sm bg-transparent whitespace-pre-wrap max-h-36 overflow-auto text-muted-foreground">{`> persona: ${persona}
@@ -394,8 +402,8 @@ export default function CopilotPage() {
           </section>
 
           {/* Right panel: Execution History */}
-          <aside className="md:col-span-1">
-            <div className="sticky top-24">
+          <aside className="md:col-span-1 w-full max-w-full overflow-x-hidden"> {/* MOBILE FIX 3 */}
+            <div className="sticky top-24 md:static"> {/* MOBILE FIX 3 */}
               <Card className="bg-card">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between mb-3">
@@ -492,10 +500,7 @@ export default function CopilotPage() {
                     <div className="text-sm text-muted-foreground">
                       Audit logs are local in demo
                     </div>
-                    <Button
-                      size="sm"
-                      onClick={() => alert("Download logs (mock)")}
-                    >
+                    <Button size="sm" onClick={() => alert("Download logs (mock)")}>
                       <CopyIcon /> Export
                     </Button>
                   </div>
@@ -525,7 +530,11 @@ export default function CopilotPage() {
               <Link href="/">Return Home</Link>
             </Button>
 
-            <Button size="sm" variant="default" onClick={() => alert("Deploy workflow (mock)")}>
+            <Button
+              size="sm"
+              variant="default"
+              onClick={() => alert("Deploy workflow (mock)")}
+            >
               <PlayIcon /> Deploy
             </Button>
           </div>
