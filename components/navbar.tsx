@@ -81,10 +81,10 @@ export default function NavBar() {
                 </Button>
               </DropdownMenuTrigger>
 
-              {/* UPDATED DROPDOWN CONTENT */}
+              {/* FULL UPDATED DROPDOWN CONTENT — NO REMOVALS */}
               <DropdownMenuContent className="w-80">
 
-                {/* 1. AI COPILOT COMMAND CENTER */}
+                {/* AI COPILOT COMMAND CENTER */}
                 <DropdownMenuItem asChild>
                   <Link href="/copilot" className="flex items-start">
                     <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
@@ -97,66 +97,68 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
 
-                {/* 2. AI COPILOTS */}
+                {/* AI COPILOTS */}
                 <DropdownMenuItem asChild>
                   <Link href="/copilot" className="flex items-start">
                     <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
                     <div>
                       <div className="font-semibold">AI Copilots</div>
                       <div className="text-sm text-muted-foreground">
-                        Intelligent assistants for sales, support, workflows, and operations.
+                        Intelligent assistants for sales, support, workflows, and
+                        operations across Kaali • Space products.
                       </div>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                {/* 3. DATA INTELLIGENCE */}
+                {/* DATA INTELLIGENCE */}
                 <DropdownMenuItem asChild>
                   <Link href="/data-intelligence" className="flex items-start">
                     <PersonIcon className="mr-2 h-4 w-4" />
                     <div>
                       <div className="font-semibold">Data Intelligence</div>
                       <div className="text-sm text-muted-foreground">
-                        Real-time analytics, monitoring, and insights for automation decisions.
+                        Real-time analytics, monitoring, and insights to power
+                        automation and decision-making.
                       </div>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                {/* 4. SUPPORT AUTOMATION */}
+                {/* SUPPORT AUTOMATION */}
                 <DropdownMenuItem asChild>
                   <Link href="/support-automation" className="flex items-start">
                     <GlobeIcon className="mr-2 h-4 w-4" />
                     <div>
                       <div className="font-semibold">Support Automation</div>
                       <div className="text-sm text-muted-foreground">
-                        Automated triage and enterprise-level response workflows.
+                        Automated support workflows with enterprise-grade triage.
                       </div>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                {/* 5. HIGH AVAILABILITY */}
+                {/* HIGH AVAILABILITY */}
                 <DropdownMenuItem asChild>
                   <Link href="/high-availability" className="flex items-start">
                     <TimerIcon className="mr-2 h-4 w-4" />
                     <div>
                       <div className="font-semibold">High Availability</div>
                       <div className="text-sm text-muted-foreground">
-                        Performance, uptime, and scalable infrastructure tools.
+                        Tools engineered for performance, uptime, and scalability.
                       </div>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                {/* 6. DEDICATED SUPPORT */}
+                {/* DEDICATED SUPPORT */}
                 <DropdownMenuItem asChild>
                   <Link href="/dedicated-support" className="flex items-start">
                     <FaceIcon className="mr-2 h-4 w-4" />
                     <div>
                       <div className="font-semibold">Dedicated Support</div>
                       <div className="text-sm text-muted-foreground">
-                        Technical guidance and success enablement across Kaali • Space.
+                        Expert technical guidance and success enablement.
                       </div>
                     </div>
                   </Link>
@@ -191,7 +193,7 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* MOBILE DROPDOWN */}
+        {/* MOBILE MENU */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -209,6 +211,7 @@ export default function NavBar() {
                 className="px-2 pt-2 pb-3 space-y-1"
               >
 
+                {/* MOBILE ITEMS */}
                 {menuItems.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -226,7 +229,7 @@ export default function NavBar() {
                   </motion.div>
                 ))}
 
-                {/* Mobile “Connect” */}
+                {/* CONNECT MOBILE */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
