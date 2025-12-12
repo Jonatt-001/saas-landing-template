@@ -35,7 +35,7 @@ const Footer = () => {
             href="/"
             className="text-xl font-medium hover:opacity-80 transition-opacity"
           >
-            Acme
+            Kaali • Space
           </Link>
           <div className="flex space-x-3">
             {socialLinks.map((social) => (
@@ -58,9 +58,9 @@ const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-muted-foreground">
-            <span>© {year} Acme</span>
+            <span>© {year} Kaali • Space</span>
             <span className="hidden sm:inline">•</span>
-            <span className="font-medium">#BuildingInPublic</span>
+            <span className="font-medium">#AutomatingTheFuture</span>
           </div>
         </motion.div>
       </div>
