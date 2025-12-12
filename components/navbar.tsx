@@ -33,6 +33,8 @@ export default function NavBar() {
     <nav className="sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+
+          {/* MOBILE MENU BUTTON */}
           <div className="flex sm:hidden">
             <Button
               variant="ghost"
@@ -48,11 +50,15 @@ export default function NavBar() {
               </motion.div>
             </Button>
           </div>
+
+          {/* MOBILE TITLE */}
           <div className="flex sm:hidden">
             <Link href="/" className="font-light tracking-tighter text-lg">
               Kaali • Space
             </Link>
           </div>
+
+          {/* DESKTOP NAV */}
           <div className="hidden sm:flex items-center space-x-8">
             <Link href="/" className="font-light tracking-tighter text-2xl">
               Kaali • Space
@@ -66,6 +72,7 @@ export default function NavBar() {
               <Link href="#testimonials">Testimonials</Link>
             </Button>
 
+            {/* SOLUTIONS DROPDOWN */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
@@ -74,65 +81,92 @@ export default function NavBar() {
                 </Button>
               </DropdownMenuTrigger>
 
+              {/* UPDATED DROPDOWN CONTENT */}
               <DropdownMenuContent className="w-80">
-                <DropdownMenuItem>
-                  <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
-                  <div>
-                    <div className="font-semibold">AI Copilots</div>
-                    <div className="text-sm text-muted-foreground">
-                      Intelligent assistants for sales, support, workflows, and
-                      operations across Kaali • Space products.
+
+                {/* 1. AI COPILOT COMMAND CENTER */}
+                <DropdownMenuItem asChild>
+                  <Link href="/copilot" className="flex items-start">
+                    <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">AI Copilot Command Center</div>
+                      <div className="text-sm text-muted-foreground">
+                        Run commands, simulate workflows, and manage AI operations.
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem>
-                  <PersonIcon className="mr-2 h-4 w-4" />
-                  <div>
-                    <div className="font-semibold">Data Intelligence</div>
-                    <div className="text-sm text-muted-foreground">
-                      Real-time analytics, monitoring, and insights to power
-                      automation and decision-making.
+                {/* 2. AI COPILOTS */}
+                <DropdownMenuItem asChild>
+                  <Link href="/copilot" className="flex items-start">
+                    <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">AI Copilots</div>
+                      <div className="text-sm text-muted-foreground">
+                        Intelligent assistants for sales, support, workflows, and operations.
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem>
-                  <GlobeIcon className="mr-2 h-4 w-4" />
-                  <div>
-                    <div className="font-semibold">Support Automation</div>
-                    <div className="text-sm text-muted-foreground">
-                      Automated support workflows with enterprise-grade response
-                      systems and AI-assisted triage.
+                {/* 3. DATA INTELLIGENCE */}
+                <DropdownMenuItem asChild>
+                  <Link href="/data-intelligence" className="flex items-start">
+                    <PersonIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">Data Intelligence</div>
+                      <div className="text-sm text-muted-foreground">
+                        Real-time analytics, monitoring, and insights for automation decisions.
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem>
-                  <TimerIcon className="mr-2 h-4 w-4" />
-                  <div>
-                    <div className="font-semibold">High Availability</div>
-                    <div className="text-sm text-muted-foreground">
-                      Tools engineered for performance, uptime, and scalable
-                      production environments.
+                {/* 4. SUPPORT AUTOMATION */}
+                <DropdownMenuItem asChild>
+                  <Link href="/support-automation" className="flex items-start">
+                    <GlobeIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">Support Automation</div>
+                      <div className="text-sm text-muted-foreground">
+                        Automated triage and enterprise-level response workflows.
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem>
-                  <FaceIcon className="mr-2 h-4 w-4" />
-                  <div>
-                    <div className="font-semibold">Dedicated Support</div>
-                    <div className="text-sm text-muted-foreground">
-                      Expert assistance, technical guidance, and success
-                      enablement across the Kaali • Space ecosystem.
+                {/* 5. HIGH AVAILABILITY */}
+                <DropdownMenuItem asChild>
+                  <Link href="/high-availability" className="flex items-start">
+                    <TimerIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">High Availability</div>
+                      <div className="text-sm text-muted-foreground">
+                        Performance, uptime, and scalable infrastructure tools.
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </DropdownMenuItem>
+
+                {/* 6. DEDICATED SUPPORT */}
+                <DropdownMenuItem asChild>
+                  <Link href="/dedicated-support" className="flex items-start">
+                    <FaceIcon className="mr-2 h-4 w-4" />
+                    <div>
+                      <div className="font-semibold">Dedicated Support</div>
+                      <div className="text-sm text-muted-foreground">
+                        Technical guidance and success enablement across Kaali • Space.
+                      </div>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
 
+          {/* RIGHT SIDE ITEMS */}
           <div className="flex items-center space-x-4">
             <Button asChild className="hidden sm:flex" size="sm">
               <Link href="https://x.com/gonzalochale" target="_blank">
@@ -147,15 +181,17 @@ export default function NavBar() {
                 >
                   <path
                     fill="currentColor"
-                    d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+                    d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026Z"
                   />
                 </svg>
               </Link>
             </Button>
+
             <ThemeSwitcher />
           </div>
         </div>
 
+        {/* MOBILE DROPDOWN */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -172,15 +208,13 @@ export default function NavBar() {
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="px-2 pt-2 pb-3 space-y-1"
               >
+
                 {menuItems.map((item, index) => (
                   <motion.div
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.2 + index * 0.1,
-                    }}
+                    transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
                   >
                     <Link
                       href={item.href}
@@ -192,6 +226,7 @@ export default function NavBar() {
                   </motion.div>
                 ))}
 
+                {/* Mobile “Connect” */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -204,22 +239,10 @@ export default function NavBar() {
                     className="flex items-center px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Connect on{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 1200 1227"
-                      className="ml-2"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-                      />
-                    </svg>
+                    Connect on X
                   </Link>
                 </motion.div>
+
               </motion.div>
             </motion.div>
           )}
