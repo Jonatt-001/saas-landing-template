@@ -9,8 +9,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Landing Template",
-  description: "Landing Page template.",
+  title: "Kaali • Space | AI Copilots, Automation & Data Intelligence",
+  description:
+    "Kaali • Space delivers enterprise-grade AI copilots, automated support systems, real-time data intelligence, and high-performance digital tools engineered to scale modern businesses.",
 };
 
 export default function RootLayout({
