@@ -8,7 +8,7 @@ export default function Testimonials() {
       role: "CEO at TechStart",
       avatar: "https://i.pravatar.cc/150?img=1",
       content:
-        "This platform has transformed how we manage our business. The analytics features alone have saved us countless hours and improved our decision-making process significantly.",
+        "Kaali • Space became the backbone of our operations. Automations that once took days now run in minutes. Our team has scaled without adding headcount.",
       rating: 5,
     },
     {
@@ -16,7 +16,7 @@ export default function Testimonials() {
       role: "Product Manager at Scale Co",
       avatar: "https://i.pravatar.cc/150?img=3",
       content:
-        "The integration capabilities are outstanding. We were able to connect all our existing tools seamlessly. The customer support team is also incredibly responsive and helpful.",
+        "The AI copilots integrated flawlessly with our workflows. Our support response time dropped by 62% in the first week. Absolutely game-changing.",
       rating: 5,
     },
     {
@@ -24,7 +24,7 @@ export default function Testimonials() {
       role: "CTO at DataFlow",
       avatar: "https://i.pravatar.cc/150?img=5",
       content:
-        "Security was our main concern when choosing a platform, and this solution exceeded our expectations. The encryption and compliance features give us complete peace of mind.",
+        "Data intelligence from Kaali • Space uncovered issues we didn’t even know existed. The platform’s security and compliance features exceed every requirement we had.",
       rating: 5,
     },
     {
@@ -32,7 +32,7 @@ export default function Testimonials() {
       role: "CTO at FinanceFlow",
       avatar: "https://i.pravatar.cc/150?img=15",
       content:
-        "Security and compliance are critical in our industry. This platform not only meets but exceeds all our regulatory requirements.",
+        "In finance, reliability isn’t optional. The automation pipeline and uptime guarantees from Kaali • Space have made it our most trusted infrastructure layer.",
       rating: 5,
     },
     {
@@ -40,7 +40,7 @@ export default function Testimonials() {
       role: "Director of Operations at StreamlineOps",
       avatar: "https://i.pravatar.cc/150?img=17",
       content:
-        "The customer support is phenomenal. Every question gets answered quickly and thoroughly. It's like having an extended team member.",
+        "Our operational overhead dropped dramatically. The automated support system resolves tickets before a human even sees them. It feels unfair to our competitors.",
       rating: 5,
     },
     {
@@ -48,7 +48,7 @@ export default function Testimonials() {
       role: "Founder at NextGen Solutions",
       avatar: "https://i.pravatar.cc/150?img=19",
       content:
-        "We've tried many platforms, but this one stands out for its reliability and performance. Zero downtime in 18 months of usage.",
+        "Eighteen months on Kaali • Space with zero downtime. The reliability is unreal, and the performance improvements are obvious across every part of our product.",
       rating: 5,
     },
     {
@@ -56,7 +56,7 @@ export default function Testimonials() {
       role: "Product Lead at InnovateLab",
       avatar: "https://i.pravatar.cc/150?img=21",
       content:
-        "The analytics dashboard gives us insights we never had before. Data-driven decisions have become our competitive advantage.",
+        "The intelligence dashboard helped us shift from reactive to proactive decisions. Our roadmap alignment improved instantly.",
       rating: 5,
     },
     {
@@ -64,7 +64,7 @@ export default function Testimonials() {
       role: "Engineering Manager at TechBridge",
       avatar: "https://i.pravatar.cc/150?img=23",
       content:
-        "Migration was seamless and the onboarding process was exceptional. Our team was productive from day one.",
+        "Migration was smoother than we expected. Our engineers were fully productive on day one, thanks to the polished documentation and onboarding tools.",
       rating: 5,
     },
     {
@@ -72,7 +72,7 @@ export default function Testimonials() {
       role: "CEO at GrowthMetrics",
       avatar: "https://i.pravatar.cc/150?img=25",
       content:
-        "The platform scales beautifully with our business. From startup to enterprise, it has grown with us every step of the way.",
+        "Kaali • Space scaled with us from 5 clients to over 2,000. We’ve never had to re-architect anything. The system grows as aggressively as we do.",
       rating: 5,
     },
     {
@@ -80,7 +80,7 @@ export default function Testimonials() {
       role: "Head of Product at DataDriven",
       avatar: "https://i.pravatar.cc/150?img=27",
       content:
-        "Real-time collaboration features have transformed how our remote team works together. Productivity has increased dramatically.",
+        "Remote collaboration improved instantly. Automations handle the grunt work so the team focuses on strategy instead of busywork.",
       rating: 5,
     },
   ];
@@ -106,10 +106,11 @@ export default function Testimonials() {
           className="text-center mb-20 flex flex-col gap-3"
         >
           <h2 className="text-xl font-semibold sm:text-2xl bg-linear-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-            Loved by Teams Worldwide
+            Trusted by Modern Teams Everywhere
           </h2>
           <p className="mx-auto max-w-xl text-muted-foreground text-center">
-            Join thousands of companies that trust our platform.
+            The Kaali • Space automation ecosystem powers startups, enterprises,
+            and global organizations.
           </p>
         </motion.div>
 
