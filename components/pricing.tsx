@@ -9,40 +9,40 @@ import { CheckIcon } from "@radix-ui/react-icons";
 export default function Pricing() {
   const plans = [
     {
-      name: "Hobby Plan",
-      desc: "Perfect for getting started",
+      name: "Starter Automation",
+      desc: "Ideal for creators and small teams exploring AI workflows",
       price: 0,
       isMostPop: false,
       features: [
-        "Make the best schedule",
-        "Support your team",
-        "Basic analytics",
+        "AI workflow basics",
+        "Starter support automation",
+        "Essential analytics dashboard",
       ],
     },
     {
-      name: "Pro Plan",
-      desc: "Best for growing teams",
+      name: "Pro Automation Suite",
+      desc: "Optimized for scaling SaaS and fast-growing digital teams",
       price: 29,
       isMostPop: true,
       features: [
-        "Everything in Hobby",
-        "Advanced team features",
-        "Priority support",
-        "Video calls",
-        "Custom integrations",
+        "Everything in Starter",
+        "AI Copilot for support & operations",
+        "Advanced data intelligence",
+        "Priority response engine",
+        "Custom API integrations",
       ],
     },
     {
-      name: "Enterprise Plan",
-      desc: "For large organizations",
+      name: "Enterprise Intelligence",
+      desc: "Purpose-built for organizations needing scale and automation depth",
       price: 99,
       isMostPop: false,
       features: [
         "Everything in Pro",
-        "Advanced security",
-        "Custom branding",
-        "Dedicated support",
-        "SLA guarantee",
+        "Enterprise security & compliance",
+        "Custom automation pipelines",
+        "Dedicated support team",
+        "SLA-backed uptime guarantee",
       ],
     },
   ];
@@ -60,11 +60,11 @@ export default function Pricing() {
         className="text-center mb-16 flex flex-col gap-3"
       >
         <h2 className="text-xl font-semibold sm:text-2xl bg-linear-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-          Choose Your Plan
+          Choose the Right Kaali • Space Plan
         </h2>
         <p className="mx-auto max-w-xl text-muted-foreground text-center">
-          Select the perfect plan for your needs. Upgrade or downgrade at any
-          time.
+          Whether you're launching or scaling, Kaali • Space offers flexible
+          automation and intelligence plans for every stage.
         </p>
       </motion.div>
 
