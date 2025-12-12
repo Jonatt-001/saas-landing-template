@@ -27,13 +27,15 @@ export default function Hero() {
           className="flex flex-col justify-center items-center space-y-5 max-w-4xl mx-auto text-center"
         >
           <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
-            New template!
+            Powered by Kaali • Space
           </span>
           <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl text-pretty bg-linear-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
-            Beautiful Landing Page Template for SaaS Startups
+            The Automation Engine for Modern SaaS, AI Workflows & Digital Growth
           </h1>
           <p className="max-w-2xl text-lg mx-auto text-muted-foreground text-balance">
-            Create your next landing page using this free template.
+            Build, launch, and scale with Kaali • Space — AI copilots, automated
+            support, data intelligence, and high-performance tools designed for teams
+            that move fast.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -45,10 +47,10 @@ export default function Hero() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Gonzalo Chalé</DialogTitle>
+                  <DialogTitle>Kaali • Space</DialogTitle>
                   <DialogDescription>
-                    I&apos;m Software Engineer from Cancún, México, always
-                    building things for the web.
+                    A modern automation and intelligence ecosystem powering SaaS founders,
+                    developers, and digital teams with production-ready tools.
                   </DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
