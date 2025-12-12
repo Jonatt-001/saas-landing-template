@@ -50,12 +50,12 @@ export default function NavBar() {
           </div>
           <div className="flex sm:hidden">
             <Link href="/" className="font-light tracking-tighter text-lg">
-              Acme
+              Kaali • Space
             </Link>
           </div>
           <div className="hidden sm:flex items-center space-x-8">
             <Link href="/" className="font-light tracking-tighter text-2xl">
-              Acme
+              Kaali • Space
             </Link>
 
             <Button asChild variant="ghost" size="sm">
@@ -69,64 +69,70 @@ export default function NavBar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
-                  Dropdown
+                  Solutions
                   <ChevronDownIcon className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
+
               <DropdownMenuContent className="w-80">
                 <DropdownMenuItem>
                   <OpenInNewWindowIcon className="mr-2 h-4 w-4" />
                   <div>
-                    <div className="font-semibold">Autoscaling</div>
+                    <div className="font-semibold">AI Copilots</div>
                     <div className="text-sm text-muted-foreground">
-                      ACME scales apps to meet user demand, automagically, based
-                      on load.
+                      Intelligent assistants for sales, support, workflows, and
+                      operations across Kaali • Space products.
                     </div>
                   </div>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <PersonIcon className="mr-2 h-4 w-4" />
                   <div>
-                    <div className="font-semibold">Usage Metrics</div>
+                    <div className="font-semibold">Data Intelligence</div>
                     <div className="text-sm text-muted-foreground">
-                      Real-time metrics to debug issues. Slow query added?
-                      We&apos;ll show you exactly where.
+                      Real-time analytics, monitoring, and insights to power
+                      automation and decision-making.
                     </div>
                   </div>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <GlobeIcon className="mr-2 h-4 w-4" />
                   <div>
-                    <div className="font-semibold">Production Ready</div>
+                    <div className="font-semibold">Support Automation</div>
                     <div className="text-sm text-muted-foreground">
-                      ACME runs on ACME, join us and others serving requests at
-                      web scale.
+                      Automated support workflows with enterprise-grade response
+                      systems and AI-assisted triage.
                     </div>
                   </div>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <TimerIcon className="mr-2 h-4 w-4" />
                   <div>
-                    <div className="font-semibold">+99% Uptime</div>
+                    <div className="font-semibold">High Availability</div>
                     <div className="text-sm text-muted-foreground">
-                      Applications stay on the grid with high availability and
-                      high uptime guarantees.
+                      Tools engineered for performance, uptime, and scalable
+                      production environments.
                     </div>
                   </div>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <FaceIcon className="mr-2 h-4 w-4" />
                   <div>
-                    <div className="font-semibold">+Supreme Support</div>
+                    <div className="font-semibold">Dedicated Support</div>
                     <div className="text-sm text-muted-foreground">
-                      Overcome any challenge with a supporting team ready to
-                      respond.
+                      Expert assistance, technical guidance, and success
+                      enablement across the Kaali • Space ecosystem.
                     </div>
                   </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
+
           <div className="flex items-center space-x-4">
             <Button asChild className="hidden sm:flex" size="sm">
               <Link href="https://x.com/gonzalochale" target="_blank">
@@ -149,6 +155,7 @@ export default function NavBar() {
             <ThemeSwitcher />
           </div>
         </div>
+
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -170,7 +177,10 @@ export default function NavBar() {
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 0.2 + index * 0.1,
+                    }}
                   >
                     <Link
                       href={item.href}
@@ -181,6 +191,7 @@ export default function NavBar() {
                     </Link>
                   </motion.div>
                 ))}
+
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
